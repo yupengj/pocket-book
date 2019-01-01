@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: DEBUG
+    org.springframework: ERROR
+    org.jyp.pocketbook.wx: DEBUG
+    org.jyp.pocketbook: DEBUG

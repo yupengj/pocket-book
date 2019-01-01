@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    org.jyp.pocketbook.wx: INFO
+    org.jyp.pocketbook: INFO
