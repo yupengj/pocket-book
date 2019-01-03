@@ -65,6 +65,6 @@ function request(url, data = {}, method = "GET") {
 function showErrorToast(msg) {
   wx.showToast({
     title: msg,
-    image: '/images/icon_error.png'
+    image: '../images/icon_error.png'
   })
 }

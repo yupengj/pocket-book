@@ -69,14 +69,12 @@ Page({
 
   },
   login: function (e) {
-    debugger
     if (e.detail.userInfo == undefined) {
       app.globalData.hasLogin = false;
       util.showErrorToast('微信登录失败');
       return;
     }
     user.checkLogin().catch(() => {
-      debugger
       user.login(e.detail.userInfo).then(res => {
         app.globalData.hasLogin = true;
         //wx.navigateBack({

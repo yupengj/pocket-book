@@ -3,16 +3,24 @@ package org.jyp.pocketbook.core.config;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-public class PbHandlerInterceptor implements HandlerInterceptor {
+/**
+ * 登录检查拦截器
+ * 
+ * @author jiangyp
+ *
+ */
+@Component
+public class LoginHandlerInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("mmmmmmmmmmmm");
-		return false;
+		System.out.println("登录检查拦截器");
+		return true;
 	}
 
 	@Override

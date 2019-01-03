@@ -1,14 +1,19 @@
 package org.jyp.pocketbook.core.config;
 
-import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configurable
-public class ConfigurationAdapter extends WebMvcConfigurerAdapter {
+@Configuration
+public class ConfigurationAdapter implements WebMvcConfigurer {
+
+	@Autowired
+	private LoginHandlerInterceptor loginHandlerInterceptor;
+
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		super.addInterceptors(registry);
-		registry.addInterceptor(new PbHandlerInterceptor()).addPathPatterns("/**");
+		//addPathPatterns("/wx/**");
+		registry.addInterceptor(loginHandlerInterceptor).excludePathPatterns("/resources/**").addPathPatterns("/**");
 	}
 }
