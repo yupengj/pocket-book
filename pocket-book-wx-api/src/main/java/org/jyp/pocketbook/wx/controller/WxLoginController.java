@@ -32,7 +32,7 @@ public class WxLoginController {
 		WxUserInfo userInfo = loginInfo.getUserInfo();
 
 		String appId = "wxed1c1d2db476998b";
-		String appSecret = "...";
+		String appSecret = "a4b97364c8c61cb25ee858448572b604";
 
 		String url = "https://api.weixin.qq.com/sns/jscode2session?appid=" + appId + "&secret=" + appSecret
 				+ "&js_code=" + code + "&grant_type=authorization_code";
